@@ -18,13 +18,22 @@ class Calculator{
   }
 
   divide(number) {
+    if (number === 0  || !Number.isInteger(number)){
+      return;
+    }
     this.currentValue /= number;
     return this.currentValue;
   }
  
   multiply(number) {
+    if (!Number.isInteger(number)) {
+      return;
+    }else if (number===0){
+      return 0;
+    }
     this.currentValue *= number;
     return this.currentValue;
+
   }
 }
 
